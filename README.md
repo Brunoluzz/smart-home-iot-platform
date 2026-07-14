@@ -116,6 +116,15 @@ Components:
 
 To provide remote control and real-time monitoring of electrical loads.
 
+## Components
+
+- PZEM-004T (electronic sensor module used to measure AC electrical energy parameters)
+- ESP32-C6
+- Status LED
+- Configuration reset button
+- Plug
+- Relay
+
 ## Features
 
 - Remote ON/OFF control
