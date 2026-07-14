@@ -142,7 +142,7 @@ The SmartPlug enables users to monitor energy consumption patterns and remotely 
 
 ### Demonstration Video
 
-[▶ Watch the SmartPlug Demo](SmartPlug/videos/smartplug-demo.mp4)
+[▶ Watch the SmartPlug Demo](SmartPlug/Documentation/videos/smartplug-demo.mp4)
 
 ---
 
