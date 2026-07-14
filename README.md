@@ -121,7 +121,7 @@ To provide remote control and real-time monitoring of electrical loads.
 - Remote ON/OFF control
 - Energy consumption monitoring
 - Power measurement
-- Supply Voltage
+- Supply voltage measurement
 - MQTT communication
 - Automation support
 - Automatic Wi-Fi provisioning
@@ -129,7 +129,11 @@ To provide remote control and real-time monitoring of electrical loads.
 - Home Assistant auto-discovery
 - Visual status feedback through LED indicators
 
-The SmartPlug enables users to monitor energy consumption patterns and remotely control connected loads state (ON/OFF) through Home Assistant.
+The SmartPlug enables users to monitor energy consumption patterns and remotely control connected loads through Home Assistant.
+
+### Demonstration Video
+
+[▶ Watch the SmartPlug Demo](SmartPlug/videos/smartplug-demo.mp4)
 
 ---
 
