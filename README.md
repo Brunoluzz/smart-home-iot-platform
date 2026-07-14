@@ -16,15 +16,15 @@ SmartHome is divided into two main subsystems:
 
 ### SmartClima
 
-An intelligent climate control solution designed for traditional Portuguese central heating systems.
+An intelligent climate control solution designed for traditional Portuguese gas central heating systems.
 
-The system consists of multiple ESP32-based modules capable of autonomous configuration, Home Assistant integration and remote operation.
+The system consists of multiple ESP32-C6-based modules capable of autonomous configuration, Home Assistant integration and remote operation.
 
 ### SmartPlug
 
 A smart power outlet focused on remote device control and real-time energy monitoring.
 
-The module allows users to monitor consumption, automate loads and improve energy efficiency through Home Assistant.
+The module provides energy consumption monitoring, load automation via scheduling, and improved energy efficiency through the integration of PID control and AI within Home Assistant.
 
 ---
 
@@ -32,10 +32,11 @@ The module allows users to monitor consumption, automate loads and improve energ
 
 The platform follows a modular architecture based on:
 
-- ESP32 microcontrollers
+- ESP32-C6 microcontrollers
 - MQTT communication protocol
+- Raspberry Pi-Based Central Server
 - Home Assistant
-- Python-based AI models
+- Python-based AI model
 - Wi-Fi connectivity
 
 All automation logic is implemented within Home Assistant, making the system highly configurable and easy to extend.
@@ -46,15 +47,15 @@ All automation logic is implemented within Home Assistant, making the system hig
 
 ## Objective
 
-To modernize traditional domestic heating systems by enabling intelligent temperature monitoring, remote control and thermal prediction.
+To modernize traditional domestic heating systems through intelligent temperature monitoring, remote control, and thermal prediction, integrating PID-based control with a stepper motor for automated actuation of a conventional residential radiator valve.
 
 ## Main Components
 
 ### Control Module
 
-The main control module is composed of:
+The main control module, designed to replace a traditional residential thermostat, is composed of:
 
-- ESP32
+- ESP32-C6
 - Relay
 - Status LED
 - Configuration reset button
@@ -81,8 +82,8 @@ After connecting to the local network, the device automatically:
 
 The environmental sensing module consists of:
 
-- ESP32
-- DHT11 temperature and humidity sensor
+- ESP32-C6
+- DHT11 temperature
 - Status LED
 - Reset button
 
@@ -94,7 +95,7 @@ Responsible for controlling heating flow.
 
 Components:
 
-- ESP32
+- ESP32-C6
 - Stepper motor
 - End-stop microswitch
 - Status LED
@@ -102,7 +103,7 @@ Components:
 
 #### Features
 
-- Valve positioning control
+- Valve positioning control (0-100%)
 - Homing procedure using microswitch
 - Remote actuation
 - Integration with Home Assistant automations
@@ -120,11 +121,15 @@ To provide remote control and real-time monitoring of electrical loads.
 - Remote ON/OFF control
 - Energy consumption monitoring
 - Power measurement
-- Integration with Home Assistant
+- Supply Voltage
 - MQTT communication
 - Automation support
+- Automatic Wi-Fi provisioning
+- Plug-and-play installation
+- Home Assistant auto-discovery
+- Visual status feedback through LED indicators
 
-The SmartPlug enables users to visualize consumption patterns and implement energy-saving strategies through Home Assistant.
+The SmartPlug enables users to monitor energy consumption patterns and remotely control connected loads state (ON/OFF) through Home Assistant.
 
 ---
 
@@ -134,10 +139,11 @@ The platform includes a thermal prediction model developed in Python and execute
 
 The model was designed to:
 
-- Predict room temperature evolution
+- Predict room temperature evolution considering outside temperature
 - Improve heating efficiency
 - Anticipate thermal behaviour
 - Support automated climate control decisions
+- Learn the heating patterns of the dwelling
 
 ---
 
@@ -161,11 +167,13 @@ This approach allows the system to operate without dedicated backend servers whi
 
 ## Hardware
 
-- ESP32
+- ESP32-C6
 - Relay modules
 - DHT11
 - Stepper motor
 - Microswitches
+- Switches
+- LED's
 
 ## Software
 
@@ -173,6 +181,8 @@ This approach allows the system to operate without dedicated backend servers whi
 - Python
 - MQTT
 - Home Assistant
+- Yaml
+- Jinja2
 
 ---
 
@@ -193,4 +203,5 @@ This approach allows the system to operate without dedicated backend servers whi
 - Add OTA firmware updates.
 - Improve thermal prediction models.
 - Develop custom PCB designs.
+- Make a 3D-printed enclosure for each module.
 - Support additional smart home devices.
